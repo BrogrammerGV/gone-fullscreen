@@ -1,5 +1,59 @@
-<p>test works!</p>
-<p>
-    {{str}}
-</p>
-<mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+<mat-toolbar color="primary">
+    <span>GoneFullscreen</span>
+  
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+  
+  </mat-toolbar>
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Expand for Data
+    </mat-panel-title>
+    <mat-panel-description> 
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <mat-card *ngFor="let item of apiData; let i = index" class="example-card">
+    <mat-card-header class="container">
+    <!-- <div mat-card-avatar [style]="item.logo_url" class="example-header-image"></div> -->
+        <mat-card-title> <img style="padding-left:45px; margin-top:-10px; position:absolute; opacity:.5;" height="50px" width="50px" [src]="item.logo_url"/> <span>{{item.id}}</span></mat-card-title>
+        <mat-card-subtitle>{{item.name}}</mat-card-subtitle>
+
+    </mat-card-header>
+    
+    <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+    <mat-card-content>
+ 
+        <mat-list>
+            <mat-list-item> Price: {{item.high | currency}} -- {{item.price_date | date}} </mat-list-item>
+           </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+        <p>
+            High: {{item.high | currency}} on {{item.high_timestamp | date}}
+           </p>
+      <!-- <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button> -->
+    </mat-card-actions>
+  </mat-card>
+</mat-expansion-panel>
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Twitch
+      </mat-panel-title>
+      <mat-panel-description> 
+        <!-- <twitch></twitch> -->
+
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+   <div *ngFor="let user of twitchData.data; let x = index">
+    <app-twitch *ngIf="user != undefined" [userData]="user" ></app-twitch>
+
+   </div>
+    <mat-divider></mat-divider>
+
+  </mat-expansion-panel>
+
+<mat-slider color="primary" style="width: 100%;" min="1" max="100" step="1" value="20"></mat-slider>
