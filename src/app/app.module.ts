@@ -12,13 +12,15 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { TwitchComponent } from './twitch/twitch.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    TwitchComponent
+    TwitchComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
