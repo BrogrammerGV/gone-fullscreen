@@ -37,4 +37,11 @@ export class FullscreenDbService {
     console.log(x);
     return x;
   }
+
+  getCats(){
+    var x = this.http.get(' https://api.thecatapi.com/v1/images/search', this.httpOptions);
+    console.log(x);
+    return x;
+
+  }
 }

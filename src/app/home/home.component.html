@@ -1,1 +1,46 @@
-<p>home works!</p>
+<mat-toolbar color="primary">
+    <span>GoneFullscreen Cats :D</span>
+  </mat-toolbar>
+
+<mat-card width="100%">
+
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Random Cat Pic
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+       <div>
+        <img *ngIf="this.cats != undefined" src="{{this.cats.url}}" alt="Avatar" width="100%">
+       </div>
+        <mat-divider></mat-divider>
+    
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Taylor's Random Meme Generator
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+       <div>
+        <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <mat-label>Write Something</mat-label>
+              <input name="test" [(ngModel)]="changeText" matInput placeholder="Ex. Pizza" >
+            </mat-form-field>
+      
+          </form>
+        <img src="https://cataas.com/cat/says/{{text}}" alt="Avatar" width="100%" height="50%">
+       </div>
+        <mat-divider></mat-divider>
+    
+      </mat-expansion-panel>
+
+      <button mat-button type="button" onclick="location.reload();">Reload</button>
+
+
+    
+    
+</mat-card>

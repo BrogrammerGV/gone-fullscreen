@@ -11,6 +11,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import {MatButtonModule, MatButton} from '@angular/material/button';
 import { TwitchComponent } from './twitch/twitch.component';
 import { HomeComponent } from './home/home.component';
 
@@ -31,7 +34,10 @@ import { HomeComponent } from './home/home.component';
     MatToolbarModule,
     MatExpansionModule,
     MatCardModule,
-    MatListModule
+    MatListModule, 
+    MatInputModule, 
+    MatButtonModule,
+    FormsModule
 
   ],
   providers: [],
