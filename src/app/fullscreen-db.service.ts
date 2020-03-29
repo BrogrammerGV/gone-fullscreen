@@ -26,6 +26,11 @@ export class FullscreenDbService {
     return this.http.get(this.ticker);
   }
 
+  auth(){
+    var x = this.http.get(' https://id.twitch.tv/oauth2/validate', this.httpOptions);
+    console.log(x);
+    return x;
+  }
     
   getUserContent(ids: string){
     var x = this.http.get('https://api.twitch.tv/helix/users?' + ids, this.httpOptions);

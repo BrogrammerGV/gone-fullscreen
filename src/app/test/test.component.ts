@@ -53,6 +53,9 @@ export class TestComponent implements OnInit {
   
   }
 
+  authenticate(){
+    this.dbService.auth().subscribe((data:string ) => {console.log(data)});
+  }
 
   KeyField(pie): string {
     return Object.keys(this.apiData[pie])[pie];
